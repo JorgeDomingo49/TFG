@@ -1,0 +1,84 @@
+2021-02-14 19:31:26 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: ytc)
+2021-02-14 19:31:26 [scrapy.utils.log] INFO: Versions: lxml 4.6.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 18.9.0, Python 3.9.1 (default, Dec 11 2020, 14:29:41) - [GCC 9.3.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.3.1, Platform Linux-5.4.0-62-generic-x86_64-with
+2021-02-14 19:31:26 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-02-14 19:31:26 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'ytc',
+ 'DUPEFILTER_CLASS': 'scrapy_splash.SplashAwareDupeFilter',
+ 'HTTPCACHE_STORAGE': 'scrapy_splash.SplashAwareFSCacheStorage',
+ 'LOG_FILE': '/var/lib/scrapyd/logs/ytc/ytspider/37d3f58e6efb11ebb5450242ac120003.log',
+ 'NEWSPIDER_MODULE': 'ytc.spiders',
+ 'SPIDER_MODULES': ['ytc.spiders'],
+ 'USER_AGENT': 'ytc (+http://www.yourdomain.com)'}
+2021-02-14 19:31:26 [scrapy.extensions.telnet] INFO: Telnet Password: 42e420cdc3eed81d
+2021-02-14 19:31:26 [py.warnings] WARNING: /usr/local/lib/python3.9/site-packages/scrapy/extensions/feedexport.py:247: ScrapyDeprecationWarning: The `FEED_URI` and `FEED_FORMAT` settings have been deprecated in favor of the `FEEDS` setting. Please see the `FEEDS` setting docs for more details
+  exporter = cls(crawler)
+
+2021-02-14 19:31:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2021-02-14 19:31:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'ytc.middlewares.YtcCookiesMiddleware',
+ 'scrapy_splash.SplashMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-02-14 19:31:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy_splash.SplashDeduplicateArgsMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-02-14 19:31:26 [py.warnings] WARNING: /usr/local/lib/python3.9/site-packages/scrapy/utils/project.py:90: ScrapyDeprecationWarning: Use of environment variables prefixed with SCRAPY_ to override settings is deprecated. The following environment variables are currently defined: FEED_URI, JOB, LOG_FILE, SLOT, SPIDER
+  warnings.warn(
+
+2021-02-14 19:31:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['ytc.pipelines.MongoDBPipeline']
+2021-02-14 19:31:26 [scrapy.core.engine] INFO: Spider opened
+2021-02-14 19:31:26 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-02-14 19:31:26 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-02-14 19:31:26 [py.warnings] WARNING: /usr/local/lib/python3.9/site-packages/scrapy_splash/request.py:41: ScrapyDeprecationWarning: Call to deprecated function to_native_str. Use to_unicode instead.
+  url = to_native_str(url)
+
+2021-02-14 19:31:37 [scrapy_splash.middleware] WARNING: Bad request to Splash: {'error': 400, 'type': 'ScriptError', 'description': 'Error happened while executing Lua script', 'info': {'type': 'JS_ERROR', 'js_error_type': 'TypeError', 'js_error_message': "undefined is not an object (evaluating 'document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click')", 'js_error': "TypeError: undefined is not an object (evaluating 'document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click')", 'message': '[string "..."]:12: JS error: "TypeError: undefined is not an object (evaluating \'document.getElementsByClassName(\'style-scope yt-button-renderer style-text size-small\')[0].click\')"', 'splash_method': 'evaljs', 'source': '[string "..."]', 'line_number': 12, 'error': 'JS error: "TypeError: undefined is not an object (evaluating \'document.getElementsByClassName(\'style-scope yt-button-renderer style-text size-small\')[0].click\')"'}}
+2021-02-14 19:31:37 [ytc.middlewares] DEBUG: Request Cookie not present
+2021-02-14 19:31:37 [scrapy.core.engine] DEBUG: Crawled (400) <GET https://www.youtube.com via http://splash:8050/execute> (referer: None)
+2021-02-14 19:31:37 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <400 https://www.youtube.com>: HTTP status code is not handled or not allowed
+2021-02-14 19:31:37 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-02-14 19:31:37 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1888,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 1059,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/400': 1,
+ 'elapsed_time_seconds': 10.480773,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 2, 14, 19, 31, 37, 281788),
+ 'httperror/response_ignored_count': 1,
+ 'httperror/response_ignored_status_count/400': 1,
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 11,
+ 'log_count/WARNING': 4,
+ 'memusage/max': 58056704,
+ 'memusage/startup': 58056704,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'splash/execute/request_count': 1,
+ 'splash/execute/response_count/400': 1,
+ 'start_time': datetime.datetime(2021, 2, 14, 19, 31, 26, 801015)}
+2021-02-14 19:31:37 [scrapy.core.engine] INFO: Spider closed (finished)

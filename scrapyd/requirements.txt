@@ -1,0 +1,4 @@
+Twisted==18.9.0
+scrapyd
+pymongo
+scrapy-splash

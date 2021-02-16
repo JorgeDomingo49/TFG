@@ -1,0 +1,1 @@
+curl http://scrapyd:6800/schedule.json -d project=ytc -d spider=ytspider -d start_url=https://www.youtube.com/watch?v=V57QF7RQ8dc -d profile=ft -d exp_id=exp_99 -d max_steps=4 -d account=bidenscrapy@gmail.com -d password=defeattrump

@@ -1,0 +1,2 @@
+scrapyd-client
+-e git+https://github.com/scrapy/scrapyd-client##egg=scrapyd-client

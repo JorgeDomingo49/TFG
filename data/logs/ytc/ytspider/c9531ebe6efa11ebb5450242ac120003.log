@@ -1,0 +1,353 @@
+2021-02-14 19:28:16 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: ytc)
+2021-02-14 19:28:16 [scrapy.utils.log] INFO: Versions: lxml 4.6.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 18.9.0, Python 3.9.1 (default, Dec 11 2020, 14:29:41) - [GCC 9.3.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.3.1, Platform Linux-5.4.0-62-generic-x86_64-with
+2021-02-14 19:28:16 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-02-14 19:28:16 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'ytc',
+ 'DUPEFILTER_CLASS': 'scrapy_splash.SplashAwareDupeFilter',
+ 'HTTPCACHE_STORAGE': 'scrapy_splash.SplashAwareFSCacheStorage',
+ 'LOG_FILE': '/var/lib/scrapyd/logs/ytc/ytspider/c9531ebe6efa11ebb5450242ac120003.log',
+ 'NEWSPIDER_MODULE': 'ytc.spiders',
+ 'SPIDER_MODULES': ['ytc.spiders'],
+ 'USER_AGENT': 'ytc (+http://www.yourdomain.com)'}
+2021-02-14 19:28:16 [scrapy.extensions.telnet] INFO: Telnet Password: 9aa12287eb16f11e
+2021-02-14 19:28:16 [py.warnings] WARNING: /usr/local/lib/python3.9/site-packages/scrapy/extensions/feedexport.py:247: ScrapyDeprecationWarning: The `FEED_URI` and `FEED_FORMAT` settings have been deprecated in favor of the `FEEDS` setting. Please see the `FEEDS` setting docs for more details
+  exporter = cls(crawler)
+
+2021-02-14 19:28:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2021-02-14 19:28:17 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'ytc.middlewares.YtcCookiesMiddleware',
+ 'scrapy_splash.SplashMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-02-14 19:28:17 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy_splash.SplashDeduplicateArgsMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-02-14 19:28:17 [py.warnings] WARNING: /usr/local/lib/python3.9/site-packages/scrapy/utils/project.py:90: ScrapyDeprecationWarning: Use of environment variables prefixed with SCRAPY_ to override settings is deprecated. The following environment variables are currently defined: FEED_URI, JOB, LOG_FILE, SLOT, SPIDER
+  warnings.warn(
+
+2021-02-14 19:28:17 [scrapy.middleware] INFO: Enabled item pipelines:
+['ytc.pipelines.MongoDBPipeline']
+2021-02-14 19:28:17 [scrapy.core.engine] INFO: Spider opened
+2021-02-14 19:28:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-02-14 19:28:17 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-02-14 19:28:17 [py.warnings] WARNING: /usr/local/lib/python3.9/site-packages/scrapy_splash/request.py:41: ScrapyDeprecationWarning: Call to deprecated function to_native_str. Use to_unicode instead.
+  url = to_native_str(url)
+
+2021-02-14 19:28:57 [scrapy_splash.middleware] DEBUG: Received cookies from: <200 https://www.youtube.com>
+Set-Cookie: CONSENT=PENDING+709
+Set-Cookie: hideBrowserUpgradeBox=true
+Set-Cookie: YSC=hnnl1lvSK2Q
+Set-Cookie: VISITOR_INFO1_LIVE=rW6Zu1AcoIg
+Set-Cookie: GPS=1
+Set-Cookie: CheckConnectionTempCookie965=120067
+Set-Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Set-Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Set-Cookie: HSID=AswRFeMYqURVTtYOf
+Set-Cookie: SSID=A7dO-O3w-48a334k3
+Set-Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Set-Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: NID=209=FVa7fKrKitqyXzyoKN8qbXlnXswjeqU55Q_629JUZplh3l3DaWkObgnCLW7Z3NAWZyqKa3LlrvYgDvFF6b2VjkbEF-bhbnc_vZddFrGrpuHnnOsCUnUTKKCTTZEfYCscIr-e1tGzJTrVMe3zuMNlZrO6GGSP7vsa63reaf-XoUs
+Set-Cookie: __Host-GAPS=1:YmD1nfxo47quBmRhFbajvD8XKc-oG4pX2ItAfTbYAHsz15AEk9g3da5M_rk-KSBHfMLaPaVFRuxYu7ms_jKdfDxAmRqGsg:un4fO5ToXWzedcv8
+Set-Cookie: LSID=s.ES|s.youtube:6gczfd3WQquHwdeO1wD1Jxl4WDiUNQ6eDiJ92ZfGcoA5NB587xAqpqAZk_KuFhIqmUhMOA.
+Set-Cookie: __Host-3PLSID=s.ES|s.youtube:6gczfd3WQquHwdeO1wD1Jxl4WDiUNQ6eDiJ92ZfGcoA5NB58r5kuJpLPD59-AJGdOslFJQ.
+Set-Cookie: ACCOUNT_CHOOSER=AFx_qI6ANedSvXea1Rjh9mvsJx1ighZ2ncxXcgCj-oF77rJiKbDb6aCbz1aAtoQ8MzOLgdJt9VRsFY0iImVugJmgR8zat4sgDimd-HUfo4y7nKMot1XhIjE7x68um4dJKe7cfpV59KOj935lQLT69pjWvJJBYCM4-g
+Set-Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Set-Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Set-Cookie: HSID=ANXyqXzepQhgfPEe9
+Set-Cookie: SSID=AgtS3Zt_PE21k_xMu
+Set-Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Set-Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Set-Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Set-Cookie: HSID=ANXyqXzepQhgfPEe9
+Set-Cookie: SSID=AgtS3Zt_PE21k_xMu
+Set-Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Set-Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: NID=209=VK1T3vzvIlEUul4PRU5377dMIz028uUVkFiqGQAjcxh97gk0pJpUWI4cqIbqj3rHvrD_rhhjjhwNOMnGiotOO3vYwTHUkDzL97zofFS0tExY7AxVq7ElgryGI-uTdaDu4aC4kAK6eHZqUBmLC0RUmqYXT8aWF9PwSzeXS3H2khs
+Set-Cookie: LOGIN_INFO=AFmmF2swRQIgLqy4RNrkSX5JuMe_STxfe9qBiwp84MlmD37d4opjYoICIQDZhXZj0nBti0P-CJeBUj75DiGclyImH8GMlO-kX4Z7XQ:QUQ3MjNmeEs4VXVGaWs3SmhPbHdMalNISDRUMXdfSm1sRDVLRll4X3lqWGdhNTBkWFFPTEw4X01xMkJTaXBXZ1puRm1ZU2lNU3FueUEzVkN1S3lrajRwMkJMVjZSeHp3RXYweFBaMFRud2pYajZsNk5rNW1MYkJ4enVwam9aQkJQd2stejJ0a3VodFh3SkE5SDZRM213aVNpdTZHRU45djNaRm1WM1MxR3dqQ2xoekhNblFrd0JN
+Set-Cookie: PREF=tz=Etc.GMT
+Set-Cookie: SIDCC=AJi4QfFRVq7gLwl0YG1JwEqv8B3WeZ4cfJ4yLCjpA9_elu3UO1c-qmkbwJuYMkjU_NDNNr4O
+Set-Cookie: __Secure-3PSIDCC=AJi4QfGn0cW11Vdflja7B1aV5drMzMvUnZLDh9ueCwHVdYTstZGIUN_iQ6cDJjH_WL73i-am
+Set-Cookie: IDE=AHWqTUk8CplvE71svWtXBdgI2syBJ8AZs36EqLj_VdQUX3ABI6sAK5U4wT_4sOzC
+Set-Cookie: SIDCC=AJi4QfFx0nTzA9S0k2amIZAmS6Gso2wYnTnDu-Y2RYqu9HR0FMxtLkafIYQg-PMuaShNvlaoUw
+Set-Cookie: __Secure-3PSIDCC=AJi4QfEHERjjkWxVeUu5ThUmUv92mIeLeplgXwTZj0m2TXxbI9pjCjCqSjtQj0kVLhLP1ytmYw
+2021-02-14 19:28:57 [ytc.middlewares] DEBUG: Request Cookie not present
+2021-02-14 19:28:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.youtube.com via http://splash:8050/execute> (referer: None)
+2021-02-14 19:28:57 [scrapy_splash.middleware] DEBUG: Sending cookies to: <GET https://www.youtube.com/watch?v=3xlExHPyqM0>
+Cookie: IDE=AHWqTUk8CplvE71svWtXBdgI2syBJ8AZs36EqLj_VdQUX3ABI6sAK5U4wT_4sOzC
+Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Cookie: HSID=AswRFeMYqURVTtYOf
+Cookie: NID=209=FVa7fKrKitqyXzyoKN8qbXlnXswjeqU55Q_629JUZplh3l3DaWkObgnCLW7Z3NAWZyqKa3LlrvYgDvFF6b2VjkbEF-bhbnc_vZddFrGrpuHnnOsCUnUTKKCTTZEfYCscIr-e1tGzJTrVMe3zuMNlZrO6GGSP7vsa63reaf-XoUs
+Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Cookie: SIDCC=AJi4QfFRVq7gLwl0YG1JwEqv8B3WeZ4cfJ4yLCjpA9_elu3UO1c-qmkbwJuYMkjU_NDNNr4O
+Cookie: SSID=A7dO-O3w-48a334k3
+Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Cookie: __Secure-3PSIDCC=AJi4QfGn0cW11Vdflja7B1aV5drMzMvUnZLDh9ueCwHVdYTstZGIUN_iQ6cDJjH_WL73i-am
+Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Cookie: HSID=ANXyqXzepQhgfPEe9
+Cookie: NID=209=VK1T3vzvIlEUul4PRU5377dMIz028uUVkFiqGQAjcxh97gk0pJpUWI4cqIbqj3rHvrD_rhhjjhwNOMnGiotOO3vYwTHUkDzL97zofFS0tExY7AxVq7ElgryGI-uTdaDu4aC4kAK6eHZqUBmLC0RUmqYXT8aWF9PwSzeXS3H2khs
+Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Cookie: SSID=AgtS3Zt_PE21k_xMu
+Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Cookie: CONSENT=PENDING+709
+Cookie: GPS=1
+Cookie: HSID=ANXyqXzepQhgfPEe9
+Cookie: LOGIN_INFO=AFmmF2swRQIgLqy4RNrkSX5JuMe_STxfe9qBiwp84MlmD37d4opjYoICIQDZhXZj0nBti0P-CJeBUj75DiGclyImH8GMlO-kX4Z7XQ:QUQ3MjNmeEs4VXVGaWs3SmhPbHdMalNISDRUMXdfSm1sRDVLRll4X3lqWGdhNTBkWFFPTEw4X01xMkJTaXBXZ1puRm1ZU2lNU3FueUEzVkN1S3lrajRwMkJMVjZSeHp3RXYweFBaMFRud2pYajZsNk5rNW1MYkJ4enVwam9aQkJQd2stejJ0a3VodFh3SkE5SDZRM213aVNpdTZHRU45djNaRm1WM1MxR3dqQ2xoekhNblFrd0JN
+Cookie: PREF=tz=Etc.GMT
+Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Cookie: SIDCC=AJi4QfFx0nTzA9S0k2amIZAmS6Gso2wYnTnDu-Y2RYqu9HR0FMxtLkafIYQg-PMuaShNvlaoUw
+Cookie: SSID=AgtS3Zt_PE21k_xMu
+Cookie: VISITOR_INFO1_LIVE=rW6Zu1AcoIg
+Cookie: YSC=hnnl1lvSK2Q
+Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Cookie: __Secure-3PSIDCC=AJi4QfEHERjjkWxVeUu5ThUmUv92mIeLeplgXwTZj0m2TXxbI9pjCjCqSjtQj0kVLhLP1ytmYw
+Cookie: hideBrowserUpgradeBox=true
+Cookie: ACCOUNT_CHOOSER=AFx_qI6ANedSvXea1Rjh9mvsJx1ighZ2ncxXcgCj-oF77rJiKbDb6aCbz1aAtoQ8MzOLgdJt9VRsFY0iImVugJmgR8zat4sgDimd-HUfo4y7nKMot1XhIjE7x68um4dJKe7cfpV59KOj935lQLT69pjWvJJBYCM4-g
+Cookie: LSID=s.ES|s.youtube:6gczfd3WQquHwdeO1wD1Jxl4WDiUNQ6eDiJ92ZfGcoA5NB587xAqpqAZk_KuFhIqmUhMOA.
+Cookie: __Host-3PLSID=s.ES|s.youtube:6gczfd3WQquHwdeO1wD1Jxl4WDiUNQ6eDiJ92ZfGcoA5NB58r5kuJpLPD59-AJGdOslFJQ.
+Cookie: __Host-GAPS=1:YmD1nfxo47quBmRhFbajvD8XKc-oG4pX2ItAfTbYAHsz15AEk9g3da5M_rk-KSBHfMLaPaVFRuxYu7ms_jKdfDxAmRqGsg:un4fO5ToXWzedcv8
+Cookie: CheckConnectionTempCookie965=120067
+2021-02-14 19:29:17 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2021-02-14 19:29:44 [scrapy_splash.middleware] DEBUG: Received cookies from: <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+Set-Cookie: IDE=AHWqTUk8CplvE71svWtXBdgI2syBJ8AZs36EqLj_VdQUX3ABI6sAK5U4wT_4sOzC
+Set-Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Set-Cookie: HSID=AswRFeMYqURVTtYOf
+Set-Cookie: NID=209=FVa7fKrKitqyXzyoKN8qbXlnXswjeqU55Q_629JUZplh3l3DaWkObgnCLW7Z3NAWZyqKa3LlrvYgDvFF6b2VjkbEF-bhbnc_vZddFrGrpuHnnOsCUnUTKKCTTZEfYCscIr-e1tGzJTrVMe3zuMNlZrO6GGSP7vsa63reaf-XoUs
+Set-Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Set-Cookie: SSID=A7dO-O3w-48a334k3
+Set-Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Set-Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Set-Cookie: HSID=ANXyqXzepQhgfPEe9
+Set-Cookie: NID=209=VK1T3vzvIlEUul4PRU5377dMIz028uUVkFiqGQAjcxh97gk0pJpUWI4cqIbqj3rHvrD_rhhjjhwNOMnGiotOO3vYwTHUkDzL97zofFS0tExY7AxVq7ElgryGI-uTdaDu4aC4kAK6eHZqUBmLC0RUmqYXT8aWF9PwSzeXS3H2khs
+Set-Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Set-Cookie: SSID=AgtS3Zt_PE21k_xMu
+Set-Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Set-Cookie: APISID=oegQ-HbPO932UZZl/A3XZdiLEki6dxQndy
+Set-Cookie: CONSENT=PENDING+709
+Set-Cookie: GPS=1
+Set-Cookie: HSID=ANXyqXzepQhgfPEe9
+Set-Cookie: LOGIN_INFO=AFmmF2swRQIgLqy4RNrkSX5JuMe_STxfe9qBiwp84MlmD37d4opjYoICIQDZhXZj0nBti0P-CJeBUj75DiGclyImH8GMlO-kX4Z7XQ:QUQ3MjNmeEs4VXVGaWs3SmhPbHdMalNISDRUMXdfSm1sRDVLRll4X3lqWGdhNTBkWFFPTEw4X01xMkJTaXBXZ1puRm1ZU2lNU3FueUEzVkN1S3lrajRwMkJMVjZSeHp3RXYweFBaMFRud2pYajZsNk5rNW1MYkJ4enVwam9aQkJQd2stejJ0a3VodFh3SkE5SDZRM213aVNpdTZHRU45djNaRm1WM1MxR3dqQ2xoekhNblFrd0JN
+Set-Cookie: SAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: SID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyEMMuQISLJyazA7U2cvE_vw.
+Set-Cookie: SSID=AgtS3Zt_PE21k_xMu
+Set-Cookie: VISITOR_INFO1_LIVE=rW6Zu1AcoIg
+Set-Cookie: YSC=hnnl1lvSK2Q
+Set-Cookie: __Secure-3PAPISID=OuPnTzn6-kbHJYmM/AwE7wbT7RBe9grkO5
+Set-Cookie: __Secure-3PSID=6gczfVhCTLtCXSePmRBJa1sLM9z-b6yVziz-HLhMUD2P-XQyhX0CfIZn9lr8tnxAZQj5tg.
+Set-Cookie: hideBrowserUpgradeBox=true
+Set-Cookie: ACCOUNT_CHOOSER=AFx_qI6ANedSvXea1Rjh9mvsJx1ighZ2ncxXcgCj-oF77rJiKbDb6aCbz1aAtoQ8MzOLgdJt9VRsFY0iImVugJmgR8zat4sgDimd-HUfo4y7nKMot1XhIjE7x68um4dJKe7cfpV59KOj935lQLT69pjWvJJBYCM4-g
+Set-Cookie: LSID=s.ES|s.youtube:6gczfd3WQquHwdeO1wD1Jxl4WDiUNQ6eDiJ92ZfGcoA5NB587xAqpqAZk_KuFhIqmUhMOA.
+Set-Cookie: __Host-3PLSID=s.ES|s.youtube:6gczfd3WQquHwdeO1wD1Jxl4WDiUNQ6eDiJ92ZfGcoA5NB58r5kuJpLPD59-AJGdOslFJQ.
+Set-Cookie: __Host-GAPS=1:YmD1nfxo47quBmRhFbajvD8XKc-oG4pX2ItAfTbYAHsz15AEk9g3da5M_rk-KSBHfMLaPaVFRuxYu7ms_jKdfDxAmRqGsg:un4fO5ToXWzedcv8
+Set-Cookie: CheckConnectionTempCookie965=120067
+Set-Cookie: PREF=tz=Etc.GMT&f5=30000
+Set-Cookie: SIDCC=AJi4QfEn5l6lG95Y8vULgyo4hJLZ1YXWARStIhiKfmCscFcKfqcoAxErP830z71d-h0_RudG
+Set-Cookie: __Secure-3PSIDCC=AJi4QfEXgQXfQT2EajcZ4RmYA_SeuVKLRy9BaVdbuI7fz6-CfJLYg6lS0yMlLr-YQZemEool
+Set-Cookie: SIDCC=AJi4QfEEPOKgY9MsOq3xkyTQVM9d-uGPO-Gt-Ft2GxjYmjY1Gu4Yl2oF5RZKItt0MwEaBofxrw
+Set-Cookie: __Secure-3PSIDCC=AJi4QfE2dBjzoQhxqhYc4MuYUJfBNlazl10dUkCxfkYrhVL8c7DSrZHq4IluS7nN6a41q-Mv3A
+2021-02-14 19:29:44 [ytc.middlewares] DEBUG: Request Cookie not present
+2021-02-14 19:29:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.youtube.com/watch?v=3xlExHPyqM0 via http://splash:8050/execute> (referer: None)
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'C. Tangana',
+ 'rec_url': '/watch?v=h0Tb9VtVzVE',
+ 'rec_views': '27\xa0M de visualizaciones',
+ 'title': 'C. Tangana, Niño de Elche - Un Veneno (Video Oficial)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'La Resistencia en Movistar+',
+ 'rec_url': '/watch?v=9NH0wFr_YEk',
+ 'rec_views': '2\xa0M de visualizaciones',
+ 'title': 'LA RESISTENCIA - Entrevista a C. Tangana | Parte 1 | #LaResistencia '
+          '09.11.2020',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'AYAX Y PROK',
+ 'rec_url': '/watch?v=30_DJen_jS0',
+ 'rec_views': '1,1\xa0M de visualizaciones',
+ 'title': 'AYAX - RAVAL RUINA (PROD TENSEI) | VIDEOCLIP #JUGLARDELSIGLOXXI',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'Dalas Review',
+ 'rec_url': '/watch?v=bgjW7tKh6P8',
+ 'rec_views': '922.932 visualizaciones',
+ 'title': 'WillyRex me DEFIENDE y DESTRUYE a Wismichu. Se alegra de que esté '
+          'CON ANTECEDENTES y CONDENADO 👍',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'DELLAFUENTE',
+ 'rec_url': '/watch?v=WkN-A-SIqzo',
+ 'rec_views': '5,8\xa0M de visualizaciones',
+ 'title': 'DELLAFUENTE, Mala Rodríguez - Tenamoras (Video Oficial)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'HARD GZ',
+ 'rec_url': '/watch?v=I96S7SxeVV0',
+ 'rec_views': '2,6\xa0M de visualizaciones',
+ 'title': 'HARD GZ & NIKONE - LO REAL (PROD.DUALY)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'Ibai',
+ 'rec_url': '/watch?v=X4QeAXsWTO0',
+ 'rec_views': '2,2\xa0M de visualizaciones',
+ 'title': 'C.TANGANA VIENE A CASA Y ANALIZAMOS SU NUEVO TEMA "TÚ ME DEJASTE DE '
+          'QUERER"',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'C. Tangana',
+ 'rec_url': '/watch?v=ltmO9XQVdSg',
+ 'rec_views': '83\xa0M de visualizaciones',
+ 'title': 'C. Tangana, Niño de Elche, La Hungara - Tú Me Dejaste De Querer',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'La Resistencia en Movistar+',
+ 'rec_url': '/watch?v=2QirMXCUP6Q',
+ 'rec_views': '660.279 visualizaciones',
+ 'title': 'LA RESISTENCIA - Entrevista a Jakub Józef Orlinski | #LaResistencia '
+          '14.01.2021',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'Nathy Peluso',
+ 'rec_url': '/watch?v=XfFvBp5ocHo',
+ 'rec_views': '10\xa0M de visualizaciones',
+ 'title': 'Nathy Peluso - DELITO',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'AYAX Y PROK',
+ 'rec_url': '/watch?v=6w3c6cigdqo',
+ 'rec_views': '1,1\xa0M de visualizaciones',
+ 'title': 'PROK - YO LA QUIERO MAMÁ (PROD DELEX) VIDEOCLIP #LECRIDELARUE🗣',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'Alizzz',
+ 'rec_url': '/watch?v=sEjplW7a6jA',
+ 'rec_views': '2\xa0M de visualizaciones',
+ 'title': 'Alizzz, Amaia - El encuentro (Videoclip oficial)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'C. Tangana',
+ 'rec_url': '/watch?v=ZlFri4ez_lE',
+ 'rec_views': '19\xa0M de visualizaciones',
+ 'title': 'C. Tangana - Demasiadas Mujeres',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'C. Tangana',
+ 'rec_url': '/watch?v=2BlYXAlRF7I',
+ 'rec_views': '7,1\xa0M de visualizaciones',
+ 'title': 'C. Tangana - Yelo (Video Oficial)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'AYAX Y PROK',
+ 'rec_url': '/watch?v=O0jhG-b6uw8',
+ 'rec_views': '3,2\xa0M de visualizaciones',
+ 'title': 'PROK - EL PUCHERO LA ABUELA (PROD BLASFEM) VIDEOCLIP #LECRIDELARUE '
+          '🗣',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'AgzTv',
+ 'rec_url': '/watch?v=RxKVWs_qYBk',
+ 'rec_views': '87\xa0M de visualizaciones',
+ 'title': 'C. Tangana - Antes de morirme feat. Rosalía (Video Oficial)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.youtube.com/watch?v=3xlExHPyqM0>
+{'rec_channel': 'KaseO TV Oficial',
+ 'rec_url': '/watch?v=L71r2g0DkcU',
+ 'rec_views': '2,7\xa0M de visualizaciones',
+ 'title': 'KASE.O - MITAD Y MITAD feat. NAJWA (BOXINBOX Remix)',
+ 'url': 'https://www.youtube.com/watch?v=3xlExHPyqM0'}
+2021-02-14 19:29:44 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.youtube.com/watch?v=3xlExHPyqM0 via http://splash:8050/execute> (referer: None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python3.9/site-packages/scrapy/utils/python.py", line 353, in __next__
+    return next(self.data)
+  File "/usr/local/lib/python3.9/site-packages/scrapy/utils/python.py", line 353, in __next__
+    return next(self.data)
+  File "/usr/local/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "/usr/local/lib/python3.9/site-packages/scrapy_splash/middleware.py", line 156, in process_spider_output
+    for el in result:
+  File "/usr/local/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "/usr/local/lib/python3.9/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "/usr/local/lib/python3.9/site-packages/scrapy/spidermiddlewares/referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "/usr/local/lib/python3.9/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "/usr/local/lib/python3.9/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 62, in _evaluate_iterable
+    for r in iterable:
+  File "/tmp/ytc-1613330891-dpr5cyj2.egg/ytc/spiders/ytspider.py", line 164, in parse
+    item['comments'] = sel.xpath("//ytd-comments-renderes-header//h2/yt-formatted-string/text()").get()
+  File "/usr/local/lib/python3.9/site-packages/scrapy/item.py", line 99, in __setitem__
+    raise KeyError(f"{self.__class__.__name__} does not support field: {key}")
+KeyError: 'YtcItem does not support field: comments'
+2021-02-14 19:29:44 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-02-14 19:29:44 [scrapy.extensions.feedexport] INFO: Stored jsonlines feed (17 items) in: file:///var/lib/scrapyd/items/ytc/ytspider/c9531ebe6efa11ebb5450242ac120003.jl
+2021-02-14 19:29:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 16669,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/POST': 2,
+ 'downloader/response_bytes': 6255943,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 87.545525,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 2, 14, 19, 29, 44, 695672),
+ 'item_scraped_count': 17,
+ 'log_count/DEBUG': 24,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 12,
+ 'log_count/WARNING': 3,
+ 'memusage/max': 74162176,
+ 'memusage/startup': 58167296,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'spider_exceptions/KeyError': 1,
+ 'splash/execute/request_count': 2,
+ 'splash/execute/response_count/200': 2,
+ 'start_time': datetime.datetime(2021, 2, 14, 19, 28, 17, 150147)}
+2021-02-14 19:29:44 [scrapy.core.engine] INFO: Spider closed (finished)
