@@ -1,0 +1,273 @@
+>> cd Desktop/YTAdCrawler/YTCAdrawler/app/ytc/
+>> sudo docker-compose up
+
+function main(splash, args)
+  splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/17.0.1')
+  splash.private_mode_enabled = false
+  splash.html5_media_enabled=true
+  assert(splash:go('https://www.youtube.com'))
+  splash:set_viewport_full()
+	splash:wait(5)
+  splash:evaljs("document.getElementById('return-to-youtube').click();") # Click "Remind me later button"
+  splash:wait(5)
+  
+  return {
+    png = splash:png(),
+  }
+end
+
+
+
+
+function main(splash, args)
+  splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/17.0.1')
+  splash.private_mode_enabled = false
+  splash.html5_media_enabled=true
+  assert(splash:go('https://www.youtube.com/watch?v=3xlExHPyqM0'))
+  splash:set_viewport_full()
+	splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click();")
+  splash:wait(5)
+  
+  return {
+    png = splash:png(),
+  }
+end
+
+function main(splash, args)
+  splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/17.0.1')
+  splash.private_mode_enabled = false
+  splash.html5_media_enabled=true
+  assert(splash:go('https://www.youtube.com/?hl=es&gl=ES'))
+  splash:set_viewport_full()
+	splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click();")
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope ytd-button-renderer style-suggestive size-small')[0].click();")
+  splash:wait(5)
+  
+  return {
+    png = splash:png(),
+    html = splash:html(),
+  }
+end
+
+splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/17.0.1')
+  splash.private_mode_enabled = false
+  splash.html5_media_enabled=true
+  assert(splash:go('https://www.youtube.com'))
+  splash:set_viewport_full()
+	splash:wait(5)
+  splash:evaljs("document.getElementById('return-to-youtube').click();") 
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click();") 
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope ytd-button-renderer style-suggestive size-small')[0].click();") 
+  splash:wait(5)
+  local select_email = splash:select_all('#Email') # Select email
+  select_email = splash:send_text("jorgepocket49@gmail.com")
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('rc-button rc-button-submit')[0].click();") 
+  splash:wait(5)
+
+--------------------------------------------
+ANTIGUO LOAD_LOGIN 
+def load_login(self):
+        script = """
+        function main(splash)
+        
+        	splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/15.0.1')
+            splash.private_mode_enabled = false
+            splash.html5_media_enabled=true
+            splash:init_cookies(splash.args.cookies)
+            
+            assert(splash:go('https://www.youtube.com'))
+            splash:set_viewport_full()
+            splash:wait(5)
+            splash:evaljs("document.getElementsByClassName('style-scope ytd-button-renderer style-suggestive size-small')[0].click();") 
+            assert (splash:wait(5))
+            local search_input = splash:select('#identifierId')
+            search_input=send_text("jorgepocket49@gmail.com")
+            splash:wait(5)   
+            splash:runjs("document.getElementsByClassName('VfPpkd-RLmnJb')[0].click();")
+            splash:wait(5)
+            local search_pass = splash:select('#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input')
+            search_pass:send_text("Elpato10")
+            splash:wait(5)
+            splash:runjs("document.getElementsByClassName('VfPpkd-RLmnJb')[0].click();")
+            splash:wait(3)
+            return {
+                html = splash:html(),
+                sshot = splash:png(),
+                cookies = splash:get_cookies()
+            }
+        end
+"""
+        return script
+
+
+
+
+
+
+
+
+-----------------------------------------
+NUEVA LOAD_LOGIN
+
+  splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/17.0.1')
+  splash.private_mode_enabled = false
+  splash.html5_media_enabled=true
+  assert(splash:go('https://www.youtube.com'))
+  splash:set_viewport_full()
+  splash:wait(5)
+  splash:evaljs("document.getElementById('return-to-youtube').click();") 
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click();") 
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('style-scope ytd-button-renderer style-suggestive size-small')[0].click();") 
+  splash:wait(5)
+  local select_email = splash:select_all('#Email') 
+  select_email = splash:send_text("jorgepocket49@gmail.com")
+  splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('rc-button rc-button-submit')[0].click();") 
+  splash:wait(5)
+  local select_pass = splash:select_all('#password')
+  select_email = splash:send_text("Elpato10")
+  splash:wait(5)
+  splash:evaljs("document.getElementById('submit').click();") 
+  splash:wait(5)
+
+--------------------------------------------------------
+
+ANTIGUA LOAD_BROWSE
+
+
+def load_browse(self):
+
+        script = """
+	function wait_for_element(splash, css, maxwait)
+	  -- Wait until a selector matches an element
+	  -- in the page. Return an error if waited more
+	  -- than maxwait seconds.
+	  if maxwait == nil then
+	      maxwait = 10
+	  end
+	  return splash:wait_for_resume(string.format([[
+	    function main(splash) {
+	      var selector = '%s';
+	      var maxwait = %s;
+	      var end = Date.now() + maxwait*1000;
+
+	function check() {
+        	if(document.querySelector(selector)) {
+	          splash.resume('Element found');
+	        } else if(Date.now() >= end) {
+	          var err = 'Timeout waiting for element';
+        	  splash.error(err + " " + selector);
+	        } else {
+	          setTimeout(check, 200);
+        	}
+	      }
+	      check();
+	    }
+	  ]], css, maxwait))
+	end
+
+
+            function main(splash)
+                splash.html5_media_enabled=true
+                splash.private_mode_enabled = false
+                splash:init_cookies(splash.args.cookies)
+                assert(splash:go(splash.args.url))
+                splash:set_viewport_full()
+                wait_for_element(splash, "#toggle")
+                splash:wait(3)
+                splash:evaljs("document.getElementById('toggle').click();")
+                splash:evaljs("document.getElementsByClassName('more-button style-scope ytd-video-secondary-info-renderer')[0].click();")
+                splash:wait(20)
+                return {
+                    cookies = splash:get_cookies(),
+                    html = splash:html(),
+                    sshot = splash:png()
+                }
+            end
+        """
+        return script
+        
+        
+--------------------------------------------------------------
+
+NUEVA LOAD_BROWSE
+
+def load_browse(self):
+
+        script = """
+	function wait_for_element(splash, css, maxwait)
+	  -- Wait until a selector matches an element
+	  -- in the page. Return an error if waited more
+	  -- than maxwait seconds.
+	  if maxwait == nil then
+	      maxwait = 10
+	  end
+	  return splash:wait_for_resume(string.format([[
+	    function main(splash) {
+	      var selector = '%s';
+	      var maxwait = %s;
+	      var end = Date.now() + maxwait*1000;
+
+	function check() {
+        	if(document.querySelector(selector)) {
+	          splash.resume('Element found');
+	        } else if(Date.now() >= end) {
+	          var err = 'Timeout waiting for element';
+        	  splash.error(err + " " + selector);
+	        } else {
+	          setTimeout(check, 200);
+        	}
+	      }
+	      check();
+	    }
+	  ]], css, maxwait))
+	end
+
+
+            function main(splash)
+            splash:set_user_agent('Mozilla/5.0 (X11;Ubuntu; Linux x86_64;rv15.0) Gecko/20100101 Firefox/17.0.1')
+                splash.html5_media_enabled=true
+                splash.private_mode_enabled = false
+                splash:init_cookies(splash.args.cookies)
+                assert(splash:go(splash.args.url))
+                splash:set_viewport_full()
+                wait_for_element(splash, "#ytp-autonav-toggle-button")
+                splash:wait(3)
+                splash:evaljs("document.getElementsByClassName('ytp-autonav-toggle-button')[0].click();")splash:wait(10)splash:wait(10)
+                splash:wait(10)
+                splash:evaljs("document.getElementsByClassName('more-button style-scope ytd-video-secondary-info-renderer')[0].click();")
+                splash:wait(20)
+                return {
+                    cookies = splash:get_cookies(),
+                    html = splash:html(),
+                    sshot = splash:png()
+                }
+            end
+        """
+        return script
+
+
+
+
+curl http://localhost:6800/schedule.json -d project=ytc -d spider=ytspider -d start_url=https://www.youtube.com/watch?v=uV0r4a2QVkQ -d profile=5 -d exp_id=exp_5 -d max_steps=1
+sudo docker-compose logs | grep express
+
+/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[5]/div[2]/ytd-video-primary-info-renderer/div/div/div[1]/div[2]/yt-formatted-string
+
+//*[@id="owner-sub-count"] /html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[5]/div[2]/ytd-video-primary-info-renderer/div/div/div[1]/div[2]/yt-formatted-string
+
+//*[@id="owner-sub-count"]
+
+/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[5]/div[2]/ytd-video-primary-info-renderer/div/h1
+
+/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[5]/div[2]/ytd-video-primary-info-renderer/div/h1/yt-formatted-string
+
+//*[@id="text"]
