@@ -137,18 +137,22 @@ class YTSpider(scrapy.Spider):
         rv_channel = sel.xpath("//ytd-compact-video-renderer//a//ytd-channel-name//yt-formatted-string/text()").getall()
         rv_views = sel.xpath("//ytd-compact-video-renderer//a//ytd-video-meta-block//div[2]/span[1]/text()").getall()
         
+        rv_date = sel.xpath("//ytd-compact-video-renderer//a//ytd-video-meta-block/div[1]/div[2]/span[2]/text()").getall()
         
-        #rv_title_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[1]/text()").getall()
-        #rv_url_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").getall()
+        rv_title_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[1]/text()").getall()
+        rv_url_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").getall()
 	
-        for (link,title,channel,views) in zip(rv_links,rv_titles,rv_channel,rv_views):
+        for (link,title,channel,views, date_upload, title_publi, url_publi) in zip(rv_links,rv_titles,rv_channel,rv_views, rv_date, rv_title_publi, rv_url_publi):
             rec_item['url'] = response.url
             rec_item['rec_url'] = link
             rec_item['title'] = title
             rec_item['rec_channel'] = channel
             rec_item['rec_views'] = views
-           # rec_item['rec_titlepubli']=title_publi
-           # rec_item['rec_urlpubli']=url_publi
+            
+            rec_item['date_upload']= date_upload
+
+            rec_item['rec_titlepubli']=title_publi
+            rec_item['rec_urlpubli']=url_publi
 
             yield rec_item
 	
@@ -160,10 +164,12 @@ class YTSpider(scrapy.Spider):
         item['subcount'] = sel.xpath("//ytd-video-secondary-info-renderer//ytd-video-owner-renderer/div[1]/yt-formatted-string/text()").get()
         item['viewcount'] = sel.xpath("//yt-view-count-renderer[@class='style-scope ytd-video-primary-info-renderer']/span/text()").get()
         item['likecount'] = sel.xpath("//ytd-toggle-button-renderer[1]/a/yt-formatted-string/text()").get()
+
         item['dislikecount'] = sel.xpath("//ytd-toggle-button-renderer[2]/a/yt-formatted-string/text()").get()
-        item['comments'] = sel.xpath("//ytd-comments-renderers-header//h2/yt-formatted-string/text()").getall()
-        #item['title_ad']=sel.xpath("//*[@id='header']").get()
-        #item['url_ad']=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").get()
+        
+        
+        item['title_ad']=sel.xpath("//ytd-action-companion-ad-renderer//div[1]/text()").getall()
+        item['url_ad']=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").getall()
         
 
         yield item
@@ -175,7 +181,7 @@ class YTSpider(scrapy.Spider):
             self.visited_videos.add(rv_links[sel_link])
             yield SplashRequest(url='https://www.youtube.com'+rv_links[sel_link],callback=self.parse,
                 endpoint='execute',cache_args=['lua_source'],
-                args={'lua_source': script},session_id='%s_%s' % (self.profile,self.exp_id))
+                args={'lua_source': script,'timeout':90},session_id='%s_%s' % (self.profile,self.exp_id))
         else:
             cookie_item = YtcCookie()
             for cookie in response.data['cookies']:
