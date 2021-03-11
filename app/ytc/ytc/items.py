@@ -22,12 +22,20 @@ class YtcItem(scrapy.Item):
     likecount = Field()
     dislikecount = Field()
 
+    title_ad=Field()
+    url_ad=Field()
+
 class YtcRec(scrapy.Item):
     url = Field()
     rec_url = Field()
     title = Field()
     rec_channel = Field()
     rec_views = Field()
+    
+    date_upload = Field()
+
+    rec_titlepubli= Field()
+    rec_urlpubli = Field()
 
 class YtcCookie(scrapy.Item):
     domain = Field()
