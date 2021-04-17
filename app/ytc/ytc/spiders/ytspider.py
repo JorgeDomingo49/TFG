@@ -79,17 +79,21 @@ class YTSpider(scrapy.Spider):
   splash:wait(5)
   splash:evaljs("document.getElementById('return-to-youtube').click();") 
   splash:wait(5)
+  splash:evaljs("document.getElementsByClassName('button')[2].click();") 
+  splash:wait(5)
+  
   splash:evaljs("document.getElementsByClassName('style-scope yt-button-renderer style-text size-small')[0].click();") 
   splash:wait(5)
+  
   splash:evaljs("document.getElementsByClassName('style-scope ytd-button-renderer style-suggestive size-small')[0].click();") 
   splash:wait(5)
   local select_email = splash:select_all('#Email') 
-  select_email = splash:send_text("100346844@alumnos.uc3m.es")
+  select_email = splash:send_text("cesarmillandogwhispererguau@gmail.com")
   splash:wait(5)
   splash:evaljs("document.getElementsByClassName('rc-button rc-button-submit')[0].click();") 
   splash:wait(5)
   local select_pass = splash:select_all('#password')
-  select_email = splash:send_text("elpato10")
+  select_email = splash:send_text("elperrero")
   splash:wait(5)
   splash:evaljs("document.getElementById('submit').click();") 
   splash:wait(5)
@@ -137,22 +141,22 @@ class YTSpider(scrapy.Spider):
         rv_channel = sel.xpath("//ytd-compact-video-renderer//a//ytd-channel-name//yt-formatted-string/text()").getall()
         rv_views = sel.xpath("//ytd-compact-video-renderer//a//ytd-video-meta-block//div[2]/span[1]/text()").getall()
         
-        rv_date = sel.xpath("//ytd-compact-video-renderer//a//ytd-video-meta-block/div[1]/div[2]/span[2]/text()").getall()
+        #rv_date = sel.xpath("//ytd-compact-video-renderer//a//ytd-video-meta-block/div[1]/div[2]/span[2]/text()").getall()
         
-        rv_title_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[1]/text()").getall()
-        rv_url_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").getall()
+        #rv_title_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[1]/text()").getall()
+        #rv_url_publi=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").getall()
 	
-        for (link,title,channel,views, date_upload, title_publi, url_publi) in zip(rv_links,rv_titles,rv_channel,rv_views, rv_date, rv_title_publi, rv_url_publi):
+        for (link,title,channel,views) in zip(rv_links,rv_titles,rv_channel,rv_views):
             rec_item['url'] = response.url
             rec_item['rec_url'] = link
             rec_item['title'] = title
             rec_item['rec_channel'] = channel
             rec_item['rec_views'] = views
             
-            rec_item['date_upload']= date_upload
+            #rec_item['date_upload']= date_upload
 
-            rec_item['rec_titlepubli']=title_publi
-            rec_item['rec_urlpubli']=url_publi
+            #rec_item['rec_titlepubli']=title_publi
+            #rec_item['rec_urlpubli']=url_publi
 
             yield rec_item
 	
@@ -161,14 +165,16 @@ class YTSpider(scrapy.Spider):
         item['owner'] = sel.xpath("//ytd-video-owner-renderer//ytd-channel-name//yt-formatted-string/a/text()").get()
         item['date'] = sel.xpath("//ytd-video-primary-info-renderer//div[2]/yt-formatted-string/text()").get()
         item['desc'] = sel.xpath("//ytd-video-secondary-info-renderer/div/ytd-expander/div//text()").getall()[1:]
-        item['subcount'] = sel.xpath("//ytd-video-secondary-info-renderer//ytd-video-owner-renderer/div[1]/yt-formatted-string/text()").get()
-        item['viewcount'] = sel.xpath("//yt-view-count-renderer[@class='style-scope ytd-video-primary-info-renderer']/span/text()").get()
+        item['subcount'] = sel.xpath("//ytd-video-secondary-info-renderer//ytd-video-owner-renderer/div[1]/yt-formatted-string/text()").getall()
+        #item['viewcount'] = sel.xpath("//yt-view-count-renderer[@class='style-scope ytd-video-primary-info-renderer']/span/text()").get() miguel
+        item['viewcount'] = sel.xpath("//ytd-video-primary-info-renderer//div[1]/div[1][@id='count']/ytd-video-view-count-renderer/span[1]/text()").get()
+        
         item['likecount'] = sel.xpath("//ytd-toggle-button-renderer[1]/a/yt-formatted-string/text()").get()
 
         item['dislikecount'] = sel.xpath("//ytd-toggle-button-renderer[2]/a/yt-formatted-string/text()").get()
         
         
-        item['title_ad']=sel.xpath("//ytd-action-companion-ad-renderer//div[1]/text()").getall()
+        item['title_ad']=sel.xpath("//ytd-action-companion-ad-renderer//div[1][@id='header']/text()").getall()
         item['url_ad']=sel.xpath("//ytd-action-companion-ad-renderer//div[2]/span/text()").getall()
         
 
